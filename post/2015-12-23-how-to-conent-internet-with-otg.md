@@ -47,6 +47,10 @@ $ sudo route add default gw 192.168.100.2 dev usb0
 
 ![](/images/otg-5.png)
 
+### 5. 配置DNS
+如果上步操作ping百度失败，可能的原因是DNS服务器没配好，编辑/etc/resolv.conf，添加地址
+nameserver 8.8.8.8
+
 现在就能访问Internet，是要一根USB数据线就可以连接pcDuino，连接Internet。
 
 ## 参考
