@@ -1,10 +1,10 @@
-# 移植minicom到pcDuino8 Uno
+# 移植minicom 2.7到pcDuino8 Uno
 
 手上有块nodeMCU，看文章说最好在Linux环境下开发，推荐使用vmware安装ubuntu系统，然后转个minicom就可以。鉴于我的Windows系统已经有两虚拟机跑着，再开个会卡，毕竟配置不高阿。刚好手上有块pcDuino8 Uno，装的就是ubuntu14.04系统。想着就拿这个板子当开发环境吧，apt-get install minicom的时候才发现源里没有，那就只好自己编译。
 
 ## 源码
-minicom-2.7.tar.gz
-ncurses-5.9.tar.gz
+- minicom-2.7.tar.gz
+- ncurses-5.9.tar.gz
 
 ## 两种方法
 - 直接编译
@@ -27,7 +27,7 @@ $sudo apt-get install gcc-arm-linux-gnueabihf
 测试该工具编译的可执行文件是否能在目标机上运行
 ```
 $vim hello.c
-$include <stdio.h>
+#include <stdio.h>
 int main()
 {
 	printf("Hello pcDuino\n");
@@ -51,10 +51,11 @@ $arm-linux-gnueabihf-gcc hello.c -L/usr/arm-linux-gnueabihf/lib
 $./configure CC=arm-linux-gnueabihf-gcc --prefix=/home/svn/work/ncurses-5.9 --host=arm-linux-gnueabihf CPPFLAGS=-I/usr/arm-linux-gnueabihf/include LDFLAGS=-L/usr/arm-linux-gnueabihf/lib --without-cxx-binding --without-manpages --disable-db-install
 ```
 CC指定编译器，--prefix指定编译输出的地方，--host指定目标运行环境，CPPFLAGS和LDFLAGS指定使用的头文件和库，--without-cxx-binding表示不需要c++的ncurses库，--without-manpages表示不需要man帮助手册，加上--disable-db-install简化交叉编译需要的包。(有些选项的意思详情可在[官方网站][1]看到)
+
 接着make && make install
 
 ```bash
-$make $$ make install
+$make && make install
 ```
 编译好所需要的ncurses库，接下来编译minicom
 
