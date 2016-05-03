@@ -114,8 +114,17 @@ make
 sudo insmod hello.ko
 dmesg | tail -n 1
 [ 1957.116615] hello,world.
-sudo rmmod hell.ko
+sudo rmmod hello.ko
 dmesg | tail -n 1
 [ 1976.438055] goodbye world
 ```
 安装完成
+
+## 参考
+- [http://wiki.lemaker.org/How_to_Compile_driver_on_Board/zh-hans][1] 	 
+- [http://unix.stackexchange.com/questions/24704/how-to-generate-module-symvers][2]
+- [http://learn.linksprite.com/pcduino/pcduino-embedded-linux-development/install-pcduino-linux-headers-3-4-79-and-compile-driver-on-pcduino/][3]
+
+[1]:http://wiki.lemaker.org/How_to_Compile_driver_on_Board/zh-hans
+[2]:http://unix.stackexchange.com/questions/24704/how-to-generate-module-symvers
+[3]:ttp://learn.linksprite.com/pcduino/pcduino-embedded-linux-development/install-pcduino-linux-headers-3-4-79-and-compile-driver-on-pcduino/
