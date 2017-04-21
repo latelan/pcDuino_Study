@@ -31,8 +31,10 @@ sudo ln -s /usr/src/linux-headers-3.4.39 build
 
 ### 3.1 安装相关工具
 ```
+wget https://s3.amazonaws.com/pcduino/Tools/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2
+tar -xvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2
+export PATH=$PATH:<your gcc-linaro-arm-linux-gnueabihf-4.7 path>/bin
 sudo apt-get install libc6:i386 libstdc++6:i386 libncurses5:i386 zlib1g:i386
-sudo apt-get install gcc-arm-linux-gnueabihf
 sudo apt-get install libncurses5-dev libncursesw5-dev device-tree-compiler u-boot-tools
 ```
 
