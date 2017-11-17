@@ -13,9 +13,10 @@
 ### 1.下载源码到pcDuino上，在/usr/src目录下创建linux-headers-3.4.39目录,将生成头文件
 ```
 sudo mkdir /usr/src/linux-headers-3.4.39
+cd pcduino8-uno-kernel/
 sudo cp ./linux-3.4 /usr/src/linux-headers-3.4.39 -r
-sudo make O=/home/svn/linux-headers-3.4.39 sun8iw6p1smp_defconfig
-sudo make O=/home/svn/linux-headers-3.4.39 modules_prepare
+sudo make O=/usr/src/linux-headers-3.4.39 sun8iw6p1smp_defconfig
+sudo make O=/usr/src/linux-headers-3.4.39 modules_prepare
 ```
 
 ### 2.建立build软链
